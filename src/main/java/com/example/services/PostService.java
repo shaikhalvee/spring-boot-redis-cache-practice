@@ -32,7 +32,7 @@ public class PostService {
     }
 
     public void updatePost(Post post) {
-        posts = posts.stream().filter(p -> p.getId() != post.getId()).collect(Collectors.toList());
+        posts = posts.stream().filter(p -> !p.getId().equals(post.getId())).collect(Collectors.toList());
         posts.add(post);
     }
 
